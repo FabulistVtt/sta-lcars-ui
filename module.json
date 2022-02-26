@@ -1,0 +1,16 @@
+{
+    "name": "sta-lcars-ui",
+    "title": "LCARS UI for Star Trek Adventures (Unofficial)",
+    "description": "Improves the user interface of Foundry with the STA system.",
+    "author": "Fabulist",
+    "version": "0.1.0",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9",
+    "esmodules": ["scripts/sta-lcars-ui.js"],
+    "styles": ["styles/sta-lcars-ui.css"],
+    "dependencies":
+    {
+        "name": "sta",
+        "type": "system"
+    }
+  }
