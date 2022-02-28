@@ -15,5 +15,5 @@
     },
     "url": "https://github.com/FabulistVtt/sta-lcars-ui"
     "manifest": "https://raw.githubusercontent.com/FabulistVtt/sta-larcs-ui/master/src/module.json",
-	"download": "https://raw.githubusercontent.com/FabulistVtt/sta-larcs-ui/v0.1.0/package/sta-lcars-ui-v0.1.0.zip"
+    "download": "https://raw.githubusercontent.com/FabulistVtt/sta-larcs-ui/v0.1.0/package/sta-lcars-ui-v0.1.0.zip"
   }
