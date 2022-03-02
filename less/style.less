@@ -1,3 +1,5 @@
+// main: sta-lcars-ui.less
+
 @almost-black: #0f0f0fef;
 @trans-black: #0f0f0f7f;
 @almost-white: #dfdfdf;
@@ -60,6 +62,7 @@
 body {
     scrollbar-color: @control-inline-default transparent;
     scrollbar-width: thin;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -192,8 +195,10 @@ button {
     .button();
 }
 
-form button {
-    .button();
+form {
+    & button {
+        .button();
+    }
 }
 
 .dark button {
@@ -305,6 +310,19 @@ form .notes, form .hint {
         background-color: @control-hover;
     }
 }
+
+.folder-edit, .folder-create {
+    & .window-content {
+        & form {
+            & input {
+                color: @text-emphasis;
+            }
+            & button {
+                .button();
+            }
+        }
+    }
+} 
 
 #sidebar{
     height: 100%;
@@ -853,8 +871,22 @@ form .notes, form .hint {
 
 @actor-sheet-default-padding: 8px;
 @actor-sheet-lcars-radius: 12px;
-@actor-sheet-lcars-vertical-line-width: 6px;
-@actor-sheet-lcars-horizontal-line-width: 14px;
+@actor-sheet-lcars-line-width: 6px;
+@actor-sheet-lcars-bar-width: 24px;
+
+.lcars-section-bottom-bar-left-line(@bar-width: @actor-sheet-lcars-bar-width, @line-width: @actor-sheet-lcars-line-width) {
+    border-color: @control-inline-default;
+    border-radius: 0 0 0 @actor-sheet-lcars-radius;
+    border-style: solid;
+    border-width: 0 0 @bar-width @line-width;
+}
+
+.lcars-section-top-bar-left-line(@bar-width: @actor-sheet-lcars-bar-width, @line-width: @actor-sheet-lcars-line-width) {
+    border-color: @control-inline-default;
+    border-radius: @actor-sheet-lcars-radius 0 0 0;
+    border-style: solid;
+    border-width: @bar-width 0 0 @line-width;
+}
 
 .sta {
     text-align: start;
@@ -883,13 +915,10 @@ form .notes, form .hint {
                 padding: 0;
             }
             & .lcars-column {
+                .lcars-section-top-bar-left-line();
                 flex: 12px;
                 flex-grow: 0;
                 flex-shrink: 1;
-                border-radius: 12px 0 0 0;
-                border-color: @control-inline-default;
-                border-width: 30px 0 0 6px;
-                border-style: solid;
                 & .lcars-header-block1,
                 .lcars-header-block2,
                 .lcars-attribute-title-block,
@@ -901,7 +930,13 @@ form .notes, form .hint {
                 .lcars-item1-general-block,
                 .lcars-item2-top-block,
                 .lcars-item2-general-block1,
-                .lcars-item2-general-block2 {
+                .lcars-item2-general-block2,
+                .lcars-header-extendedtask1,
+                .lcars-header-extendedtask2,
+                .lcars-header-extendedtask3,
+                .lcars-header-extendedtask4,
+                .lcars-body-extendedtask1,
+                .lcars-body-extendedtask2 {
                     background-color: @control-inline-default;
                     border-radius: unset;
                     visibility: hidden;
@@ -926,7 +961,7 @@ form .notes, form .hint {
                             & .title {
                                 .lcars-font();
                                 text-align: left;
-                                line-height: 30px;
+                                line-height: 24px;
                                 display: flex;
                                 margin-bottom: 4px;
                                 &::before {
@@ -988,6 +1023,7 @@ form .notes, form .hint {
                                 background-color: unset;
                                 display: flex;
                                 flex-direction: row;
+                                height: auto;
                                 & .title {
                                     flex-grow: 1;
                                     background-color: unset;
@@ -995,6 +1031,7 @@ form .notes, form .hint {
                                     text-align: right;
                                     margin-left: 0;
                                     margin-right: 8px;
+                                    line-height: 30px;
                                     &::before, &::after {
                                         all: unset;
                                     }
@@ -1138,8 +1175,7 @@ form .notes, form .hint {
             &.character {
                 & .header {
                     & .lcars-column {
-                        border-width: 0 0 14px 6px;
-                        border-radius: 0 0 0 12px;
+                        .lcars-section-bottom-bar-left-line(14px);
                     }
                 }
                 & .header-fields {
@@ -1158,11 +1194,10 @@ form .notes, form .hint {
                     }
                 }
             }
-            &.starship {
+            &.starship, &.smallcraft {
                 & .header {
                     & .lcars-column {
-                        border-width: 0 0 26px 6px;
-                        border-radius: 0 0 0 12px;
+                        .lcars-section-bottom-bar-left-line(26px);
                     }
                 }
                 & .header-fields {
@@ -1176,6 +1211,103 @@ form .notes, form .hint {
                                 font-size: 28px;
                                 height: 48px;
                                 line-height: 48px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.smallcraft {
+                & .header-fields {
+                    & .row {
+                        &:nth-child(4) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            &.extendedtask {
+                & .row {
+                    &:nth-child(1) {
+                        & .lcars-column {
+                            border-width: 0 0 0 6px;
+                            border-radius: 0;
+                        }
+                        & .column-headerfields1-name-extendedtasks, & .column-headerfields1-other-extendedtasks {
+                            padding: 0;
+                            width: unset;
+                            input {
+                                .lcars-font();
+                                font-size: 28px;
+                                height: 48px;
+                                line-height: 48px;
+                            }
+                        }
+                        & .column-headerfields1-name-extendedtasks {
+                            flex-grow: 1;
+                            width: auto;
+                            margin-bottom: 8px;
+                        }
+                        & .column-headerfields1-other-extendedtasks {
+                            flex-grow: 0;
+                            flex-shrink: 1;
+                            width: 60px;
+                            & .numeric-entry {
+                                width: 100%;
+                                margin: unset;
+                            }
+                            &:nth-child(1) {
+                                margin-right: 1px;
+                            }
+                        }                        
+                    }
+                    &:nth-child(2) {
+                        & .lcars-column {
+                            .lcars-section-bottom-bar-left-line(26px);
+                        }
+                        margin-bottom: @actor-sheet-default-padding;
+                        & .column-headerfields2-extendedtasks {
+                            padding: 0;
+                            width: unset;
+                            & .numeric-entry {
+                                width: 100%;
+                                margin: unset;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                    &:nth-child(4) {
+                        .lcars-section-bottom-bar-left-line();
+                        content: "Progress";
+                        padding: 4px 0 0 2px;
+                        & .lcars-column {
+                            display: none;
+                        }
+                    }
+                    & .extendedtask-divider {
+                        display: none;
+                    }
+                    & .track {
+                        flex-grow: 1;
+                        width: auto;
+                        & .row {
+                            margin-bottom: 4px;
+                            padding: 0px;
+                            border: none;
+                        }
+                        & .box.extendedtask {
+                            .lcars-font();
+                            background-color: @control-default;
+                            color: @text-inverted-default;
+                            &:hover {
+                                background-color: @control-hover;
+                            }
+                            &.selected {
+                                background-color: @control-active;
+                                &:hover {
+                                    background-color: @control-active-hover;
+                                }
                             }
                         }
                     }
@@ -1281,6 +1413,9 @@ form .notes, form .hint {
             }
             & .section.crew {
                 margin-top: 8px;
+            }
+            & .label {
+                color: @text-default;
             }
         }
     }
