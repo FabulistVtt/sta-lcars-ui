@@ -616,15 +616,16 @@ form .notes, form .hint {
 #controls {
     padding-top: 5px;
     & ol {
-        &.main-controls {
+        &.control-tools.main-controls {
             margin-left: 5px;
+            margin-right: 0;
             border-radius: unset;
             width: fit-content;
             display: flex;
             flex-direction: column;
             padding-left: 0px;
         }
-        & .scene-control {
+        &.control-tools > li {
             box-sizing: border-box;
             width: 57px;
             border: unset;
@@ -685,8 +686,8 @@ form .notes, form .hint {
                 border-image-width: 0px;
                 text-align: start;
                 box-shadow: unset;
-                padding-right: 8px;
-                margin-bottom: 5px;
+                padding: 0 8px 0 0;
+                margin:  0 0 5px 0;
                 & > i.fas, i.far {
                     box-sizing: content-box;
                     width: 36px;
@@ -696,6 +697,7 @@ form .notes, form .hint {
                     background-color: @control-default;
                     text-align: center;
                     vertical-align: top;
+                    margin-left: 0px;
                 }
                 &.active {
                     .right-bar-border();
