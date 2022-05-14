@@ -7,6 +7,12 @@
 @yellow: #F2CC0D;
 @light-yellow: #F7E06E;
 @lighter-yellow: #FCF5CF;
+/*@darkest-blue: #123354;
+@darker-blue: #164069;
+@darker-blue-trans: #1640693f;
+@dark-blue: #0B67C1;
+@blue: #0D80F2;
+@light-blue: #3D99F5;*/
 @darkest-blue: #00273f;
 @darker-blue: #004f7f;
 @darker-blue-trans: #004f7f3f;
@@ -443,6 +449,17 @@ form .notes, form .hint {
                 &:hover {
                     background-color: unset;
                     color: @control-hover;
+                }
+            }
+        }
+        & .table-draw {
+            & .table-description {
+                border: none;
+                color: @text-default;
+            }
+            & .result-text {
+                a.entity-link {
+                    background: @control-default;
                 }
             }
         }
@@ -1466,5 +1483,24 @@ form .notes, form .hint {
         &:hover {
             background-color: @control-hover;
         }
+    }
+}
+
+.monks-active-tiles {
+    & div[data-tab="triggers"] {
+        & .action-items {
+            & .action-style {
+                color: @text-emphasis;
+            }
+            & .value-style {
+                color: @text-default;
+            }
+        }
+    }
+} 
+
+.action-sheet {
+    & .display-value {
+        color: @text-emphasis;
     }
 }
