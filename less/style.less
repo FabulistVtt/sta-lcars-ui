@@ -100,6 +100,19 @@ section.secret {
     padding-top: 4px;
     font-weight: thin;
     margin: 4px 0;
+    display: flex;
+    flex-direction: column;
+    & button.reveal {        
+        margin-left: auto;
+        margin-top: 0px;
+        border: none;
+        background-color: @control-red-default;
+        color: @text-default;
+        &:hover {
+            background-color: @control-red-hover;
+            color: @text-minor-emphasis;
+        }
+    }
 }
 
 img {
@@ -228,7 +241,7 @@ a {
         color: @text-hyperlink-hover;
         text-shadow: none;
     }
-    &.entity-link {
+    &.content-link {
         background: @control-default;
         color: @text-inverted-default;
         padding: 0px 4px;
@@ -654,7 +667,7 @@ form .notes, form .hint {
             box-shadow: unset;
             padding-left: 18px;
             margin-bottom: 5px;
-            & i.fas, i.far {
+            & > i.fas, i.far, i.fa-solid, i.fa-regular {
                 box-sizing: content-box;
                 width: 36px;
                 height: 36px;
@@ -668,20 +681,20 @@ form .notes, form .hint {
             &.active {
                 .left-halfcircle-border();
                 border-color: @control-active;
-                & i.fas, i.far {
+                & > i.fas, i.far, i.fa-solid, i.fa-regular {
                     background-color: @control-active;
                 }
             }
             &:hover {
                 .left-halfcircle-border();
                 border-color: @control-hover;                
-                & i.fas, i.far {
+                & > i.fas, i.far, i.fa-solid, i.fa-regular {
                     background-color: @control-hover;
                 }
                 &.active {
                     .left-halfcircle-border();
                     border-color: @control-active-hover;
-                    & i.fas, i.far {
+                    & > i.fas, i.far, i.fa-solid, i.fa-regular {
                         background-color: @control-active-hover;
                     }
                 }
@@ -705,7 +718,7 @@ form .notes, form .hint {
                 box-shadow: unset;
                 padding: 0 8px 0 0;
                 margin:  0 0 5px 0;
-                & > i.fas, i.far {
+                & > i.fas, i.far, i.fa-solid, i.fa-regular {
                     box-sizing: content-box;
                     width: 36px;
                     height: 36px;
@@ -719,26 +732,26 @@ form .notes, form .hint {
                 &.active {
                     .right-bar-border();
                     border-color: @control-active;
-                    & i.fas, i.far {
+                    & > i.fas, i.far, i.fa-solid, i.fa-regular {
                         background-color: @control-active;
                     }
                 }
                 &:hover {
                     .right-bar-border();
                     border-color: @control-hover;                
-                    & i.fas, i.far {
+                    & > i.fas, i.far, i.fa-solid, i.fa-regular {
                         background-color: @control-hover;
                     }
                     &.active {
                         .right-bar-border();
                         border-color: @control-active-hover;
-                        & i.fas, i.far {
+                        & > i.fas, i.far, i.fa-solid, i.fa-regular {
                             background-color: @control-active-hover;
                         }
                     }
                 }
                 &.toggle {                    
-                    & i.fas, i.far {
+                    & > i.fas, i.far, i.fa-solid, i.fa-regular {
                         box-sizing: border-box;
                         border: 2px solid @control-default;
                         background-color: @control-inverse-fill;
@@ -747,7 +760,7 @@ form .notes, form .hint {
                     &.active {
                         .right-bar-border();
                         border-color: @control-active;
-                        & i.fas, i.far {
+                        & > i.fas, i.far, i.fa-solid, i.fa-regular {
                             border: 2px solid @control-active;
                             background-color: @control-inverse-fill;
                             color: @control-active;
@@ -764,7 +777,7 @@ form .notes, form .hint {
                     &:hover {
                         .right-bar-border();
                         border-color: @control-hover;                
-                        & i.fas, i.far {
+                        & > i.fas, i.far, i.fa-solid, i.fa-regular {
                             border: 2px solid @control-hover;
                             background-color: @control-inverse-fill;
                             color: @control-hover;
@@ -1436,7 +1449,7 @@ form .notes, form .hint {
             & .label {
                 color: @text-default;
             }
-        }
+        }        
     }
     & p {
         color: @text-default;
@@ -1444,6 +1457,11 @@ form .notes, form .hint {
     & h4.list-entry {
         margin-top: unset;
     }
+}
+
+.sheet.journal-entry .journal-entry-content {
+    background: none;
+    border: none;
 }
 
 .sta-form {
