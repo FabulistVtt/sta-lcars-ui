@@ -1511,7 +1511,19 @@ form .notes, form .hint {
                 color: @text-emphasis;
             }
             & .value-style {
-                color: @text-default;
+                color: @text-minor-emphasis;
+            }
+            & .entity-style {
+                color: @text-minor-emphasis;
+            }
+        }
+    }
+    &.sheet {
+        & .items-list {
+            & .item {
+                & .item-name {
+                    color: @text-default;
+                }
             }
         }
     }
