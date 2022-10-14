@@ -244,6 +244,7 @@ a {
     &.content-link {
         background: @control-default;
         color: @text-inverted-default;
+        margin: 1px 0px;
         padding: 0px 4px;
         border: none;
         border-radius: 8px;
@@ -474,6 +475,9 @@ form .notes, form .hint {
                 a.entity-link {
                     background: @control-default;
                 }
+            }
+            & img.result-image {
+                background: none;
             }
         }
     }
@@ -1532,5 +1536,54 @@ form .notes, form .hint {
 .action-sheet {
     & .display-value {
         color: @text-emphasis;
+    }
+}
+
+.prosemirror menu {
+    background: none;
+    & .pm-dropdown {
+        background: @control-default;
+        border-radius: 0 13px 13px 0;
+        color: @text-inverted-default;
+        & i {
+            color: @text-inverted-default;
+            &:hover {
+                color: @text-inverted-default;
+            }
+        }
+        & > i {
+            color: @text-inverted-default;
+            &:hover {
+                color: @text-inverted-default;
+            }
+        }
+        & ul {
+            background-color: @control-accent-default;
+            border: none;
+            border-radius: 0;
+            padding: 0px;
+        }
+        & li {
+            background: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 2px 8px;
+            &:hover {
+                background-color: @control-accent-hover;
+            }
+        }
+    }
+    & button {
+        background: @control-default;
+        border-radius: 0px;
+        &:hover{
+            background-color: @control-hover;
+        }
+        &.active{
+            background-color: @control-active;
+            &:hover{
+                background-color: @control-active-hover;
+            }
+        }
     }
 }
