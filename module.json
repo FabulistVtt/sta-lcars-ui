@@ -11,8 +11,7 @@
     "version": "0.3.0",
     "compatibility": {
       "minimum": "9",
-      "verified": "10.285",
-      "maximum": "10"
+      "verified": "10.285"
     },
     "esmodules": ["scripts/sta-lcars-ui.js"],
     "styles": ["styles/sta-lcars-ui.css"],
