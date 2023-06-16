@@ -1497,14 +1497,19 @@ form .notes, form .hint {
     }
 }
 
-.dialog > .window-content .dialog-button {
-    &.roll.default, &.dialog-button.ok.default, &.dialog-button.yes, &.dialog-button.no {
-        background-color: @control-default;
-        color: @text-inverted-default;
-        font-weight: unset;
-        &:hover {
-            background-color: @control-hover;
+.dialog {
+    & > .window-content .dialog-button {
+        &.roll.default, &.dialog-button.ok.default, &.dialog-button.yes, &.dialog-button.no {
+            background-color: @control-default;
+            color: @text-inverted-default;
+            font-weight: unset;
+            &:hover {
+                background-color: @control-hover;
+            }
         }
+    }
+    & .dialog-buttons button {
+        .button();
     }
 }
 

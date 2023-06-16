@@ -3,16 +3,16 @@
     "title": "LCARS UI for Star Trek Adventures (Unofficial)",
     "description": "Improves the user interface of Foundry with the STA system.",
     "authors": [
-        {
-          "name": "Fabulist",
-          "url": "https://foundryvtt.com/community/fabulist"
-        }
-      ],
-    "version": "0.3.0",
+      {
+        "name": "Fabulist",
+        "url": "https://foundryvtt.com/community/fabulist"
+      }
+    ],
+    "version": "0.3.1",
     "compatibility": {
       "minimum": "9",
-      "verified": "10.285",
-      "maximum": "10"
+      "verified": "11.301",
+      "maximum": "11"
     },
     "esmodules": ["scripts/sta-lcars-ui.js"],
     "styles": ["styles/sta-lcars-ui.css"],
@@ -23,5 +23,5 @@
     },
     "url": "https://github.com/FabulistVtt/sta-lcars-ui",
     "manifest": "https://raw.githubusercontent.com/FabulistVtt/sta-lcars-ui/main/module.json",
-    "download": "https://github.com/FabulistVtt/sta-lcars-ui/releases/download/v0.3.0/sta-lcars-ui-v0.3.0.zip"
+    "download": "https://github.com/FabulistVtt/sta-lcars-ui/releases/download/v0.3.1/sta-lcars-ui-v0.3.1.zip"
   }
